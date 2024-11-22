@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>doxyx portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <img src="./mages/doxyx_logotip.svg" alt="" />
+      <div class="hlinks">
+        <a id="about-us">О нас</a>
+        <a id="projects">Проекты</a>
+        <a id="contacts">Контакты</a>
+      </div>
+    </div>
+    <div id="about-us-txt" class="text">
+      <h2>О нас</h2>
+      <div class="text-card">
+        <p>
+          команда doxуx — это творческий союз из двух профессионалов,
+          занимающихся дизайном и веб разработкой с 2020 года. объединяя опыт и
+          свежие идеи, мы создаем современные и уникальные визуальные решения
+          для различных проектов. наш подход основан на внимании к деталям и
+          постоянном поиске новых идей.
+        </p>
+      </div>
+    </div>
+    <div id="projects-txt" class="text">
+      <h2>Проекты</h2>
+      <div class="text-card">
+        <h2>ВЭБ СТРЕЛ</h2>
+        <div class="text-img-card">
+          <!--  text and image -->
+          <p>
+            вэб стрел — это браузерная игра, которая предлагает динамичный и
+            захватывающий игровой опыт прямо в браузере. не требуя установки,
+            игра моментально загружается на любом устройстве, обеспечивая
+            высокую скорость и плавность работы. вэб стрел поддерживает
+            мультиплеерный режим, что позволяет соревноваться с друзьями и
+            другими игроками онлайн. благодаря адаптивному дизайну и
+            высококачественной графике, вэб стрелялка подстраивается под разные
+            размеры экранов, предоставляя полноценное ощущение игры как на
+            компьютере, так и на мобильных устройствах.
+          </p>
+          <img src="./mages/webstrel_screen.webp" alt="" />
+        </div>
+      </div>
+      <div class="text-card alt">
+        <h2>вэб архив книг</h2>
+        <div class="text-img-card">
+          <img src="./mages/bookarchive_screen.webp" alt="" />
+          <p>
+            вэб архив книг — это современная цифровая библиотека, где каждый
+            может найти и читать книги онлайн. удобный интерфейс, возможность
+            сортировки и фильтрации по жанрам и авторам делают веб архив книг
+            идеальным местом для любителей чтения.
+          </p>
+        </div>
+      </div>
+      <div class="text-card">
+        <h2 style="max-width: 800px">novoschool video school</h2>
+        <div class="text-img-card alt2">
+          <p>
+            novoschool video school — это образовательная платформа,
+            ориентированная на видеоуроки для разных уровней подготовки. здесь
+            представлены курсы по самым актуальным темам, от бизнеса и
+            программирования до искусства и дизайна. благодаря удобному формату,
+            можно обучаться в любое время и в любом месте, постепенно развивая
+            новые навыки. в novoschool каждый урок разработан экспертами своего
+            дела, что позволяет усваивать материал легко и эффективно.
+          </p>
+          <img src="./mages/videoschool_screen.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div id="contacts-txt" class="text">
+      <h2>Контакты</h2>
+      <div class="text-card no-hvr flx">
+        <h3>telegram</h3>
+        <a target="_blank" href="https://ktamkyaz.t.me/" class="text-card btn">
+          <img src="./mages/telegram_icon.png" width="32" alt="" />
+          @ktamkyaz
+        </a>
+        <a
+          target="_blank"
+          href="https://saltchemist.t.me/"
+          class="text-card btn"
+        >
+          <img src="./mages/telegram_icon.png" width="32" alt="" />
+          @saltchemist</a
+        >
+
+        <h3>e-mail</h3>
+        <a href="mailto:ktamkyaz@vk.com" target="_blank" class="text-card btn">
+          <img src="./mages/mail_icon.png" width="32" alt="" />
+          ktamkyaz@vk.com
+        </a>
+        <a
+          href="mailto:martalkamnab@gmail.com"
+          target="_blank"
+          class="text-card btn"
+        >
+          <img src="./mages/mail_icon.png" width="32" alt="" />
+          martalkamnab@gmail.com
+        </a>
+      </div>
+    </div>
+    <p class="ai-info">
+      * при создании текста и изображений для проектов были использованны
+      нейросети
+      <img width="32px" src="./mages/gpt_icon.png" alt="" />
+    </p>
+    <script>
+      window.addEventListener("scroll", () => {
+        document.querySelectorAll(".hlinks a").forEach((i) => {
+          i.classList.remove("v");
+        });
+        let a;
+        document.querySelectorAll(".text").forEach((i) => {
+          if (i.offsetTop - 150 < scrollY) {
+            a = i;
+          }
+        });
+        if (a) {
+          a = a.id.substring(0, a.id.indexOf("-txt"));
+          a = document.querySelector(`#${a}`);
+          a.classList.add("v");
+        }
+      });
+
+      document.querySelectorAll(".hlinks a").forEach((i) => {
+        i.addEventListener("click", () => {
+          window.scroll({
+            top: document.querySelector(`#${i.id}-txt`).offsetTop - 90,
+            left: 0,
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
